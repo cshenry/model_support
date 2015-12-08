@@ -29,14 +29,15 @@ sub get_ws_name {
 }
 
 eval {
-    # Prepare test objects in workspace if needed using 
-    # $ws_client->save_objects({workspace => get_ws_name(), objects => []});
-    #
-    # Run your method by
-    # my $ret = $impl->your_method(parameters...);
-    #
-    # Check returned data with
-    # ok(ret->{...} eq <expected>, "tested item") or other Test::More methods
+    my $obj_name = "contigset.1";
+    my $contig = {id => '1', length => 10, md5 => 'md5', sequence => 'agcttttcat'};
+    my $obj = {contigs => [$contig], id => 'id', md5 => 'md5', name => 'name',
+            source => 'source', source_id => 'source_id', type => 'type'};
+    $ws_client->save_objects({workspace => get_ws_name(), objects =>
+            [{type => 'KBaseGenomes.ContigSet', name => $obj_name, data => $obj}]});
+    my $ret = $impl->count_contigs(get_ws_name(), $obj_name);
+    ok($ret->{contig_count} eq 1, "right number of contigs");
+    done_testing(1);
 };
 my $err = undef;
 if ($@) {

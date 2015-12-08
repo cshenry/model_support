@@ -4,7 +4,7 @@
 	"authors": [
 		"chenry"
 	],
-	"contact": "",
+	"contact": "help@kbase.us",
 	"visible": true,
 	"categories": ["active"],
 	"widgets": {
@@ -13,14 +13,14 @@
 	},
 	"parameters": [ 
 		{
-			"id": "parameter_1",
-			"optional": true,
+			"id": "contigset_id",
+			"optional": false,
 			"advanced": false,
 			"allow_multiple": false,
 			"default_values": [ "" ],
 			"field_type": "text",
 			"text_options": {
-				"valid_ws_types": []
+				"valid_ws_types": ["KBaseGenomes.ContigSet"]
 			}
 		}
 	],
@@ -28,25 +28,25 @@
 		"service-mapping": {
 			"url": "",
 			"name": "model_support",
-			"method": "your_method",
+			"method": "count_contigs",
 			"input_mapping": [
 				{
 					"narrative_system_variable": "workspace",
 					"target_argument_position": 0
 				},
 				{
-					"input_parameter": "parameter_1",
+					"input_parameter": "contigset_id",
 					"target_argument_position": 1
 				}
 			],
 			"output_mapping": [
 				{
-					"service_method_output_path": [0],
-					"target_property": "output"
+					"service_method_output_path": [0, "contig_count"],
+					"target_property": "contigCount"
 				},
 				{
-					"input_parameter": "parameter_1",
-					"target_property": "input"
+					"input_parameter": "contigset_id",
+					"target_property": "contigsetId"
 				},
 				{
 					"narrative_system_variable": "workspace",

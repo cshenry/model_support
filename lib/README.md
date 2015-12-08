@@ -1,3 +1,6 @@
 This directory should contain your module's code.
-Run `make` in the root to generate your implementation files based on your typespec and the langauge directives in your Makefile.
-This will also generate all language-specific client libraries.
+A sample implementation file has been provided for you in
+
+```Bio/KBase/model_support/Impl.pm```
+
+Run `make` in the root to generate your language-specific client libraries.
