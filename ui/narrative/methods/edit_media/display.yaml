@@ -31,9 +31,16 @@ parameters :
         ui-name : |
             Media ID
         short-hint : |
-            The ID of the media to edit.
+            The ID of the media to edit
         long-hint  : |
-            The ID of the media to edit.
+            The ID of the media to edit
+    output_media :
+        ui-name : |
+            Output media ID
+        short-hint : |
+            The ID to which the media should be saved
+        long-hint  : |
+            The ID to which the media should be saved
 
 description : |
 	<p>This functions allows users to either create a new media from scratch or to edit and existing media formulation.</p>

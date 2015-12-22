@@ -34,6 +34,13 @@ parameters :
             The metabolic model to be edited
         long-hint  : |
             The metabolic model to be edited
+    output_model :
+        ui-name : |
+            Output model ID
+        short-hint : |
+            The ID to which the model should be saved
+        long-hint  : |
+            The ID to which the model should be saved
 
 description : |
 	<p>This functions allows users to manually edit the reactions and biomass composition of a selected metabolic model.</p>
