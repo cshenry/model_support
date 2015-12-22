@@ -1,0 +1,62 @@
+{
+	"ver": "0.0.1",
+	
+	"authors": [
+		"chenry"
+	],
+	"contact": "help@kbase.us",
+	"visible": true,
+	"categories": ["active"],
+	"widgets": {
+		"input": null,
+		"output": kbaseTabTable
+	},
+	"parameters": [ 
+		{
+			"id": "media_id",
+			"optional": true,
+			"advanced": false,
+			"allow_multiple": false,
+			"default_values": [ "" ],
+			"field_type": "text",
+			"text_options": {
+				"valid_ws_types": ["KBaseBiochem.Media"]
+			}
+		},
+		{
+			"id" : "output_media",
+			"optional" : true,
+			"advanced" : false,
+			"allow_multiple" : false,
+			"default_values" : [ "" ],
+			"field_type" : "text",
+			"text_options" : {
+				"valid_ws_types" : ["KBaseBiochem.Media"],
+				"is_output_name":true
+			}
+		}
+	],
+	"behavior": {
+		"none": {
+			"output_mapping": [
+				{
+					"constant_value": "KBaseBiochem.Media",
+					"target_property": "type"
+				},
+				{
+					"input_parameter": "media_id",
+					"target_property": "obj"
+				},
+				{
+					"input_parameter": "output_media",
+					"target_property": "output_obj"
+				},
+				{
+					"narrative_system_variable": "workspace",
+					"target_property": "ws"
+				}
+			]
+		}
+	},
+	"job_id_output_field": "docker"
+}

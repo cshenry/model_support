@@ -1,0 +1,39 @@
+#
+# define display information
+#
+name: Edit media
+tooltip: |
+	Provides a UI for editing the content, uptake fluxes, and excretion fluxes for a media formulation.
+screenshots: []
+
+icon: icon.png
+
+#
+# define a set of similar methods that might be useful to the user
+#
+suggestions:
+	apps:
+		related:
+			[]
+		next:
+			[]
+	methods:
+		related:
+			[]
+		next:
+			[run_flux_balance_analysis]
+
+#
+# Configure the display and description of parameters
+#
+parameters :
+    media_id :
+        ui-name : |
+            Media ID
+        short-hint : |
+            The ID of the media to edit.
+        long-hint  : |
+            The ID of the media to edit.
+
+description : |
+	<p>This functions allows users to either create a new media from scratch or to edit and existing media formulation.</p>
